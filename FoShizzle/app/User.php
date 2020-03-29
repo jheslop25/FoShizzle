@@ -51,4 +51,12 @@ class User extends Authenticatable
     public function comment(){
         return $this->hasMany('\App\Comment');
     }
+
+    public function notification(){
+        return $this->hasMany('\App\Notification');
+    }
+
+    public function message(){
+        return $this->hasMany('\App\Message');
+    }
 }

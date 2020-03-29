@@ -17,4 +17,8 @@ class Tweet extends Model
     public function like(){
         return $this->hasMany('\App\Like');
     }
+
+    public function hashtag(){
+        return $this->hasMany('\App\Hashtag');
+    }
 }
