@@ -8,6 +8,21 @@ class tweetController extends Controller
 {
     public function create(Request $request){
         //create a tweet
+        if(Auth::check()){
+            $tweet = new \App\Tweet();
+            $tweet->user_id = Auth::user()->id;
+            $tweet->content = $request->content;
+            $tweet->orig_user_id = $request->origUser;
+            $tweet->orig_tweet_id = $request->tweetID;
+            $tweet->photo_url = $request->photo;
+
+            if($tweet->save()){
+                $msg = "success! you created a tweet";
+                return response($msg);
+            }
+
+
+        }
     }
 
     public function update(Request $request){
