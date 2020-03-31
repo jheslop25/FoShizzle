@@ -24,6 +24,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "scrollmagic": "^2.0.7",
         "vue-loader": "^15.9.1",
         "vuetify": "^2.2.19",
         "vuetify-loader": "^1.4.3",
