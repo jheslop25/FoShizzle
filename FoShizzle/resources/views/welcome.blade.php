@@ -65,7 +65,7 @@
     </head>
     <body>
         <div id="app">
-            <example-component/>
+            <Market/>
         </div>
     </body>
 </html>
