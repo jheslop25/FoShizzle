@@ -15,6 +15,8 @@ class likeController extends Controller
             if($like->save()){
                 return response()->json(['status' => 200]);
             }
+        } else {
+            return response()->json(['msg' => 'please login'], 401);
         }
     }
 
@@ -25,6 +27,8 @@ class likeController extends Controller
                 return response()->json(['status'=>200]);
             }
 
+        } else {
+            return response()->json(['msg' => 'please login'], 401);
         }
     }
 
@@ -32,6 +36,8 @@ class likeController extends Controller
         //like a comment
         if(Auth::check()){
 
+        } else {
+            return response()->json(['msg' => 'please login'], 401);
         }
     }
 
@@ -39,6 +45,8 @@ class likeController extends Controller
         //unlike a comment
         if(Auth::check()){
 
+        } else {
+            return response()->json(['msg' => 'please login'], 401);
         }
     }
 }

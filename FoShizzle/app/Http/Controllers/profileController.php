@@ -14,6 +14,8 @@ class profileController extends Controller
             $user = \App\User::find($id);
 
             return response()->json(['user' => $user]);
+        } else {
+            return response()->json(['msg' => 'please login'], 401);
         }
     }
 
@@ -44,5 +46,9 @@ class profileController extends Controller
 
             return view('home');
         }
+    }
+
+    public function photo(){
+        //a function to handle uploading a profile pic
     }
 }

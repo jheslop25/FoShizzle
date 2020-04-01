@@ -21,6 +21,8 @@ class tweetController extends Controller
                 $msg = "success! you created a tweet";
                 return response($msg);
             }
+        } else {
+            return response()->json(['msg' => 'please login'], 401);
         }
     }
 
@@ -39,6 +41,8 @@ class tweetController extends Controller
                 $msg = "success! you updated a tweet";
                 return response($msg);
             }
+        } else {
+            return response()->json(['msg' => 'please login'], 401);
         }
     }
 
@@ -49,7 +53,10 @@ class tweetController extends Controller
             \App\Tweet::find($request->id)->delete();
             $msg = "you deleted a tweet";
             return response($msg);
+        } else {
+            return response()->json(['msg' => 'please login'], 401);
         }
+
 
     }
 
@@ -59,6 +66,8 @@ class tweetController extends Controller
         if (Auth::check()){
             $tweet = \App\Tweet::find($request->id);
             return response()->json($tweet);
+        } else {
+            return response()->json(['msg' => 'please login'], 401);
         }
     }
 
@@ -69,6 +78,8 @@ class tweetController extends Controller
             $tweet = new \App\Tweet;
             $tweets = $tweet->all();
             return response()->json($tweets);
+        } else {
+            return response()->json(['msg' => 'please login'], 401);
         }
     }
 }
